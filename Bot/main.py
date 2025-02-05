@@ -6,7 +6,7 @@ from view import Mensagem
 config = dotenv_values(".env") 
 
 if __name__ == "__main__":
-    app = ApplicationBuilder().token(config.get("TELEGRAM_TOKEN_BOT_2")).build()
+    app = ApplicationBuilder().token(config.get("TELEGRAM_TOKEN_BOT")).build()
     app.add_handlers(handlers=[
         CommandHandler(["iniciar"], Mensagem.inicia),
         CommandHandler(["atualizar"], Mensagem.atualiza),
