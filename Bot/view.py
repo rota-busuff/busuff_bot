@@ -23,7 +23,7 @@ class Mensagem:
         if (informacoes != None):
             for info in informacoes:
                 if (info['online'] == 1):
-                    mensagem = mensagem + f"\n\n🚌 *{info['rota']}*\n📍 {info['localizacao']}\n⏰ {info['previsao']} até o próximo ponto"
+                    mensagem = mensagem + f"\n\n🚌 *{info['rota']}*\n📍 {info['posicao']}\n⏰ {info['mensagem']}"
                 
                 else:
                     mensagem = mensagem + f"\n\n🚌 *{info['rota']}*\n🚫 Motorista offline\."
