@@ -17,16 +17,16 @@ class Mensagem:
 
     @staticmethod
     async def atualiza(update: Update, context: CallbackContext):
-        informacoes = Controle.rastrear()
+        informacoes = Controle.consultar()
         mensagem = ""
 
         if (informacoes != None):
             for info in informacoes:
                 if (info['online'] == 1):
-                    mensagem = mensagem + f"\n\n🚌 *{info['rota']}*\n📍 {info['localizacao']}\n⏰ {info['previsao']} até o próximo ponto"
+                    mensagem = mensagem + f"\n\n🚌 *{info['rota']}*\n📍 {info['posicao']}\n⏰ {info['mensagem']}"
                 
                 else:
-                    mensagem = mensagem + f"\n\n🚌 *{info['rota']}*\n🚫 Motorista offline"
+                    mensagem = mensagem + f"\n\n🚌 *{info['rota']}*\n🚫 Motorista offline\."
 
         else:
             mensagem = "⚠️🔌 Serviço indisponível no momento\!"
